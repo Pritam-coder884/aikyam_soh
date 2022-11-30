@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/signup" element={<Signup/>}></Route>
+        <Route path="/register" element={<Signup/>}></Route>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route>

@@ -21,7 +21,9 @@ const Signup = () => {
 
   return (
     <div className="login-container">
+      <div style={{textAlign:"center"}}>
       <h1>Register as</h1>
+      </div>
       {/* <div>
         <div>
           <input
@@ -47,7 +49,9 @@ const Signup = () => {
       {/* <div className="login-box" style={{ marginTop: "8vh" }}>
         {portal === "student" ? <StudentRegister/> : <AlumniRegister/>}
       </div> */}
+      <div>
       <FullWidthTabs />
+      </div>
       <ToastContainer />
     </div>
   );
