@@ -8,10 +8,10 @@ const Facts = () => {
       container
       p={3}
       xs={12}
-      sx={{ backgroundColor: "black", height: "20vh" }}
+      sx={{ backgroundColor: "black", height: "30vh" }}
     >
       <Typography variant="h4" color="white" sx={{ fontWeight: "600" }} pt={1}>
-        Facts{" "}
+        Stats
       </Typography>
       <Grid container direction="row" justifyContent="space-around">
         <Grid item>

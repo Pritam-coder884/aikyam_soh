@@ -10,17 +10,21 @@ const Newsletter = () => {
         </Typography>
       </Grid>
       <Grid container justifyContent="center">
-        <TextField
-          sx={{ width: "350px" }}
-          inputProps={{
-            style: {
-              height: "20px",
-            },
-          }}
-          id="outlined-name"
-          label="Email"
-        />
-        <Button>Subscribe</Button>
+        <Grid item px={1}>
+          <TextField
+            sx={{ width: "500px" }}
+            inputProps={{
+              style: {
+                height: "20px",
+              },
+            }}
+            id="outlined-name"
+            label="Email"
+          />
+        </Grid>
+        <Button variant="contained" sx={{ backgroundColor: "orange" }}>
+          Subscribe
+        </Button>
       </Grid>
     </Grid>
   );

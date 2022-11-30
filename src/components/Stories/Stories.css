@@ -1,0 +1,99 @@
+h1{
+    font-size: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+span{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Select{
+    margin: 10px;
+    height: 50px;
+}
+.stories-header{
+    padding-left: 200px;
+}
+
+.Stories-upper-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.Stories{
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 100px;
+    margin-top: 0;
+}
+.Stories-container{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.Stories-container-left{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-right: 0;
+}
+
+.Stories-container-left img{
+    height: 200px;
+    width: 260px;
+}
+
+.Stories-container-right{
+    padding: 20px;
+}
+.Stories-container-right button{
+    float: right;
+    margin-right: 20px;
+    padding: 10px;
+    background: none;
+    border: 2px solid rgba(119, 75, 75, 0.5);
+}
+
+.Stories-container-right button:hover{
+    background-color: rgb(126, 13, 13);
+    color: white;
+}
+
+
+@media only screen and (max-width: 1024px){
+    h1{
+        font-size: 27px;
+    }
+    .Stories-container{
+        grid-template-columns: 1fr;
+    }
+    span{
+        font-size: 12px;
+    }
+    p{
+        font-size: 15px;
+    }
+    .stories-header{
+        margin: 0;
+        padding-right: 10px;
+    }
+    .Stories{
+        padding-left: 0;
+        width: fit-content;
+    }
+    .Stories-container-left{
+        margin-left: 0;
+    }
+    .Stories-upper-nav{
+        margin: 2px;
+    }
+    .Stories-upper-nav .Select{
+        margin-right: 40px;
+    }
+}
