@@ -3,24 +3,34 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <Grid container p={3} justifyContent="center">
+    <Grid
+      container
+      justifyContent="center"
+      direction="row"
+      sx={{ backgroundColor: "lightyellow" }}
+      py={9}
+    >
       <Grid container justifyContent="center">
         <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h5">
           Subscribe To Get Weekly Newsletter From Alumni
         </Typography>
       </Grid>
       <Grid container justifyContent="center">
-        <TextField
-          sx={{ width: "350px" }}
-          inputProps={{
-            style: {
-              height: "20px",
-            },
-          }}
-          id="outlined-name"
-          label="Email"
-        />
-        <Button>Subscribe</Button>
+        <Grid item px={1}>
+          <TextField
+            sx={{ width: "500px" }}
+            inputProps={{
+              style: {
+                height: "20px",
+              },
+            }}
+            id="outlined-name"
+            label="Email"
+          />
+        </Grid>
+        <Button variant="contained" sx={{ backgroundColor: "orange" }}>
+          Subscribe
+        </Button>
       </Grid>
     </Grid>
   );

@@ -226,4 +226,3 @@ const AlumniRegister = () => {
 };
 
 export default AlumniRegister;
-

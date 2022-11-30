@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Login/Login.css";
+import { createStudent } from "../../utils/api/api.utils";
 import axios from "axios";
 
 const StudentRegister = () => {
@@ -11,7 +12,7 @@ const StudentRegister = () => {
     email: "",
     mobile: "",
     gender: "",
-    institution:"",
+    institution: "",
     qualification: "",
     regdno: "",
     branch: "",

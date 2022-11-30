@@ -3,8 +3,10 @@ import FooterButton from "./FooterButton/FooterButton";
 import "./Footer.css";
 import { Adb, Facebook, Instagram, LinkedIn } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const history = useNavigate();
   return (
     <>
       <div className="footer-container">
@@ -13,29 +15,26 @@ const Footer = () => {
             <div>
               <Adb sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            </div>
+            <div>AIKYAM, CONNECTING ALUMS AND STUDENTS.</div>
           </div>
           <div className="footer-box">
             <h1>UNIVERSITY</h1>
-            <FooterButton title={"STUDENTS"} />
-            <FooterButton title={"EVENTS"} />
-            <FooterButton title={"GALLERY"} />
-            <FooterButton title={"NEWS"} />
+            <FooterButton title={"STUDENTS"} navigate="/" />
+            <FooterButton title={"EVENTS"} navigate="/events" />
+            <FooterButton title={"GALLERY"} navigate="/gallery" />
+            <FooterButton title={"NEWS"} navigate="/news" />
           </div>
           <div className="footer-box">
             <h1>ALUMNI</h1>
-            <FooterButton title={"CONTACTS"} />
-            <FooterButton title={"CAREER"} />
-            <FooterButton title={"ABOUT US"} />
-            <FooterButton title={"APPLY TO JOB"} />
+            <FooterButton title={"CONTACTS"} navigate="/" />
+            <FooterButton title={"CAREER"} navigate="/jobs" />
+            <FooterButton title={"ABOUT US"} navigate="/" />
+            <FooterButton title={"APPLY TO JOB"} navigate="/jobs" />
           </div>
           <div className="footer-box">
             <h1>ACCOUNT</h1>
-            <FooterButton title={"PROFILE"} />
-            <FooterButton title={"STORIES"} />
-            <FooterButton title={"PASSWORD"} />
+            <FooterButton title={"PROFILE"} navigate="/profile" />
+            <FooterButton title={"STORIES"} navigate="/stories" />
             <FooterButton title={"DOWNLOADS"} />
           </div>
           <div className="footer-box">
@@ -43,13 +42,25 @@ const Footer = () => {
               <button>ALUMNI ACCOUNT</button>
             </div>
             <div className="footer-box-icon">
-              <IconButton>
+              <IconButton
+                onClick={() => {
+                  history("/");
+                }}
+              >
                 <Facebook />
               </IconButton>
-              <IconButton>
+              <IconButton
+                onClick={() => {
+                  history("/");
+                }}
+              >
                 <Instagram />
               </IconButton>
-              <IconButton>
+              <IconButton
+                onClick={() => {
+                  history("/");
+                }}
+              >
                 <LinkedIn />
               </IconButton>
             </div>
@@ -58,7 +69,7 @@ const Footer = () => {
         <div style={{ marginTop: "3rem" }}>
           <hr />
           <div className="footer-horizontal-line">
-            <p>©2022 Alumni Association</p>
+            <p>©2022 AIKYAM Alumni Association</p>
           </div>
         </div>
       </div>

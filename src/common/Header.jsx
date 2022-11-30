@@ -102,11 +102,42 @@ const DrawerWrapper = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem
+                key="Events"
+                onClick={() => {
+                  history("/events");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Events</Typography>
+              </MenuItem>
+              <MenuItem
+                key="Jobs"
+                onClick={() => {
+                  history("/jobs");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Jobs</Typography>
+              </MenuItem>
+              <MenuItem
+                key="Stories"
+                onClick={() => {
+                  history("/stories");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Stories</Typography>
+              </MenuItem>
+              <MenuItem
+                key="reunion"
+                onClick={() => {
+                  history("/reunion");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Reunion</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -114,7 +145,7 @@ const DrawerWrapper = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -129,15 +160,46 @@ const DrawerWrapper = () => {
             AIKYAM
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              key="stories"
+              onClick={() => {
+                history("/stories");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Stories
+            </Button>
+            <Button
+              key="jobs"
+              onClick={() => {
+                history("/jobs");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Jobs
+            </Button>
+            <Button
+              key="events"
+              onClick={() => {
+                history("/events");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Events
+            </Button>
+            <Button
+              key="reunion"
+              onClick={() => {
+                history("/reunion");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Reunion
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
