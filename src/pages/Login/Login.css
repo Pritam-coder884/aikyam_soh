@@ -1,8 +1,14 @@
-.login-container{
+/* .login-container{
     display: flex;
     justify-content: center;
     align-items: center;
     gap:15rem;
+} */
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap:10rem;
+    justify-content: center;
 }
 .login-box{
     margin-top:20vh;

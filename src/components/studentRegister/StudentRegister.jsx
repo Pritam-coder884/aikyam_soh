@@ -81,16 +81,6 @@ const StudentRegister = () => {
             onChange={handleRegisterChange}
           />
         </div>
-        <div className="login-input-box">
-          <label>Enter your Password</label>
-          <input
-            type="password"
-            required
-            name="password"
-            value={userRegister.password}
-            onChange={handleRegisterChange}
-          />
-        </div>
 
         <div className="login-input-box">
           <label>Enter your Mobile Number</label>

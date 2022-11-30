@@ -4,23 +4,25 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import StudentRegister from "../../components/studentRegister/StudentRegister";
 import AlumniRegister from "../../components/alumniRegister/AlumniRegister";
+import FullWidthTabs from "../../components/Tab/Tab";
+
 
 const Signup = () => {
-  const [portal,setPortal]=useState("student");
-  const [isChecked, setIsChecked] = useState(true);
-  const handleRadioSubmit=(e)=>{
-    setPortal(()=>e.target.value);
-    if(e.target.value === "student"){
-      setIsChecked(true);
-    }else{
-      setIsChecked(false);
-    }
-  }
+  // const [portal,setPortal]=useState("student");
+  // const [isChecked, setIsChecked] = useState(true);
+  // const handleRadioSubmit=(e)=>{
+  //   setPortal(()=>e.target.value);
+  //   if(e.target.value === "student"){
+  //     setIsChecked(true);
+  //   }else{
+  //     setIsChecked(false);
+  //   }
+  // }
 
   return (
     <div className="login-container">
-      <div>
-        <h1>Register as</h1>
+      <h1>Register as</h1>
+      {/* <div>
         <div>
           <input
             type="radio"
@@ -41,10 +43,11 @@ const Signup = () => {
           />{" "}
           Alumni
         </div>
-      </div>
-      <div className="login-box" style={{ marginTop: "8vh" }}>
+      </div> */}
+      {/* <div className="login-box" style={{ marginTop: "8vh" }}>
         {portal === "student" ? <StudentRegister/> : <AlumniRegister/>}
-      </div>
+      </div> */}
+      <FullWidthTabs />
       <ToastContainer />
     </div>
   );
