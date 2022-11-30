@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 
-import {getAuth,GoogleAuthProvider,signInWithPopup} from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 const firebaseConfig = {
-  apiKey:process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "AIzaSyAB453tJli6HRY_MK44Kg42KRjCzZAEOoc",
   authDomain: "react-firebase-auth-2411c.firebaseapp.com",
   projectId: "react-firebase-auth-2411c",
   storageBucket: "react-firebase-auth-2411c.appspot.com",
@@ -25,6 +25,3 @@ export const auth = getAuth();
 export const signInWithGooglePopup = async () => {
   return await signInWithPopup(auth, googleProvider);
 };
-
-
-

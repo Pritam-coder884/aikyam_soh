@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Login/Login.css";
 import { createStudent } from "../../utils/api/api.utils";
+import axios from "axios";
 
 const StudentRegister = () => {
   const navigate = useNavigate();
@@ -15,23 +16,69 @@ const StudentRegister = () => {
     regdno: "",
     pyear: "",
   });
-  const {
-    name,
-    email,
-    password,
-    mobile,
-    gender,
-    qualification,
-    branch,
-    regdno,
-    pyear,
-  } = userRegister;
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userRegister);
-    createStudent(userRegister)
-    navigate("/");
+
+    const {
+      name,
+      email,
+      gender,
+      mobile,
+      institution,
+      qualification,
+      pyear,
+      branch,
+      regdno,
+    } = userRegister;
+
+    try {
+      const res = await fetch("http://localhost:9000/student/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          gender,
+          mobile,
+          institution,
+          qualification,
+          pyear,
+          branch,
+          regdno,
+        }),
+      });
+      console.log(res);
+      const data = await res.json();
+      console.log(data);
+
+      // const res = await axios.post(
+      //   "http://localhost:9000/student/add",
+      //   {
+      //     name,
+      //     email,
+      //     gender,
+      //     mobile,
+      //     institution,
+      //     qualification,
+      //     pyear,
+      //     branch,
+      //     regdno,
+      //   },
+      //   {
+      //     headers: {
+      //       "content-type": "text/json",
+      //     },
+      //   }
+      // );
+    } catch (err) {
+      console.log(err);
+    }
+
+    // createStudent(userRegister)
+    // navigate("/");
   };
   const handleRegisterChange = (e) => {
     setUserRegister({ ...userRegister, [e.target.name]: e.target.value });
@@ -142,7 +189,7 @@ const StudentRegister = () => {
         <div className="login-input-box">
           <label>Enter your Passout Year</label>
           <input
-            type="date"
+            type="number"
             required
             name="pyear"
             value={userRegister.pyear}
@@ -151,7 +198,7 @@ const StudentRegister = () => {
         </div>
 
         <div className="login-input-box">
-          <button>Register</button>
+          <button>Submit</button>
         </div>
       </form>
       <div className="login-input-box" style={{ textAlign: "center" }}>
