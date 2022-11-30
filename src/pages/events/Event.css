@@ -1,0 +1,14 @@
+.events-box{
+    padding:0.5rem 4rem;
+    display: flex;
+    gap: 1rem;
+}
+.events-category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2rem 4rem 0rem 4rem;
+}
+.add-events{
+    padding:10px
+}

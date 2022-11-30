@@ -1,37 +1,74 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Login/Login.css";
-import { createStudent } from "../../utils/api/api.utils";
+import axios from "axios";
 
 const StudentRegister = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [userRegister, setUserRegister] = useState({
     name: "",
     email: "",
     mobile: "",
     gender: "",
+    institution:"",
     qualification: "",
-    branch: "",
     regdno: "",
+    branch: "",
     pyear: "",
   });
-  const {
-    name,
-    email,
-    password,
-    mobile,
-    gender,
-    qualification,
-    branch,
-    regdno,
-    pyear,
-  } = userRegister;
+  // const {
+  //   name,
+  //   email,
+  //   gender,
+  //   mobile,
+  //   institution,
+  //   qualification,
+  //   pyear,
+  //   branch,
+  //   regdno,
+  // } = userRegister;
 
-  const handleRegisterSubmit = (e) => {
+
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userRegister);
-    createStudent(userRegister)
-    navigate("/");
+
+  
+    // try {
+    //   const res = await fetch("http://localhost:9000/student/add", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       name,
+    //       email,
+    //       gender,
+    //       mobile,
+    //       institution,
+    //       qualification,
+    //       pyear,
+    //       branch,
+    //       regdno,
+    //     }),
+    //   });
+    //   console.log("res =   " + res);
+    //   const data = res.json();
+
+    try {
+			const url = "http://localhost:9000/student/add";
+			const { userRegister: res } = await axios.post(url, userRegister);
+			// navigate("/login");
+			console.log(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
   };
   const handleRegisterChange = (e) => {
     setUserRegister({ ...userRegister, [e.target.name]: e.target.value });
@@ -142,7 +179,7 @@ const StudentRegister = () => {
         <div className="login-input-box">
           <label>Enter your Passout Year</label>
           <input
-            type="date"
+            type="number"
             required
             name="pyear"
             value={userRegister.pyear}
@@ -151,7 +188,7 @@ const StudentRegister = () => {
         </div>
 
         <div className="login-input-box">
-          <button>Register</button>
+          <button>Submit</button>
         </div>
       </form>
       <div className="login-input-box" style={{ textAlign: "center" }}>

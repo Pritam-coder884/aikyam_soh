@@ -1,4 +1,20 @@
-.react-card-container{
-    border:1px solid black;
-    border-radius:10px;
+.rectangle-card {
+    flex: 1;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+}
+.rectangular-card-icon {
+    align-self: flex-end;
+    font-size:22px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.rectangular-data-icon{
+    display: flex;
+    align-items: center;
+}
+.rectangular-card-image{
+    height:200px;
 }
