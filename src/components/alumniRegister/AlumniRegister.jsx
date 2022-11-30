@@ -53,6 +53,7 @@ const AlumniRegister = () => {
       location,
       theme,
     } = userRegister;
+
     try {
       console.log({
         name,
@@ -269,4 +270,3 @@ const AlumniRegister = () => {
 };
 
 export default AlumniRegister;
-
