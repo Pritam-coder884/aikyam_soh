@@ -1,34 +1,30 @@
-import React,{useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import WrapperContainer from "../../common/WrapperContainer";
 
 const Home = () => {
-    let navigate = useNavigate();
-    const handleLogout = () => {
-      sessionStorage.removeItem('Auth Token');
-      navigate('/login')
-    }
-    useEffect(() => {
-      let authToken = sessionStorage.getItem('Auth Token')
-      console.log(authToken)
-      // if (authToken) {
-      //     navigate('/')
-      // }
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    sessionStorage.removeItem("Auth Token");
+    navigate("/login");
+  };
+  useEffect(() => {
+    let authToken = sessionStorage.getItem("Auth Token");
+    console.log(authToken);
+    // if (authToken) {
+    //     navigate('/')
+    // }
 
-      // if (!authToken) {
-      //     navigate('/signup')
-      // }
-  }, [])
+    // if (!authToken) {
+    //     navigate('/signup')
+    // }
+  }, []);
   return (
-  <>
-    <div style={{backgroundColor:"yellow"}}>
+    <WrapperContainer>
       Home page
+      <button onClick={handleLogout}>Log out</button>
+    </WrapperContainer>
+  );
+};
 
-        <button onClick={handleLogout}>Log out</button>
-    </div>
-    <Footer />
-  </>
-  )
-}
-
-export default Home
+export default Home;
