@@ -6,37 +6,111 @@ import "../../pages/Login/Login.css";
 
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const AlumniRegister = () => {
   const navigate = useNavigate();
   const [userRegister, setUserRegister] = useState({
     name: "",
     email: "",
-    password: "",
   });
-  const { name, email, password } = userRegister;
 
-  //Firebase part
-  const auth = getAuth();
-  const handleRegisterSubmit = (e) => {
+  const postImg = async (pic) => {
+    try {
+      const data = new FormData();
+      data.append("upload_preset", "alumnipics");
+      data.append("file", pic);
+
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/alokranjanjoshi07567/image/upload",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const resData = await res.json();
+      const picUrl = resData.url.toString();
+      console.log("pic url " + picUrl);
+      setUserRegister({ ...userRegister, pic: picUrl });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userRegister);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((response) => {
-        navigate("/");
-        sessionStorage.setItem(
-          "Auth Token",
-          response._tokenResponse.refreshToken
-        );
-      })
-      .catch((error) => {
-        if (error.code === "auth/weak-password") {
-          toast.error("Password should be at least 6 characters");
-        }
-        if (error.code === "auth/email-already-in-use") {
-          toast.error("Email Already in Use");
-        }
+
+    const {
+      name,
+      email,
+      pic,
+      gender,
+      mobile,
+      institution,
+      pbatch,
+      branch,
+      currentPosition,
+      location,
+      theme,
+    } = userRegister;
+
+    try {
+      console.log({
+        name,
+        email,
+        pic,
+        gender,
+        mobile,
+        institution,
+        pbatch,
+        branch,
+        currentPosition,
+        location,
+        theme,
       });
+      const res = await fetch("http://localhost:9000/alumni/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          pic,
+          gender,
+          mobile,
+          institution,
+          pbatch,
+          branch,
+          currentPosition,
+          location,
+          theme,
+        }),
+      });
+      // const res = await axios.post(
+      //   "http://localhost:9000/alumni/add",
+      //   {
+      //     name,
+      //     email,
+      //     pic,
+      //     gender,
+      //     mobile,
+      //     institution,
+      //     pbatch,
+      //     branch,
+      //     currentPosition,
+      //     location,
+      //   },
+      //   {
+      //     headers: {
+      //       "content-type": "text/plain",
+      //     },
+      //   }
+      // );
+      // console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   };
   //Firebase part end
 
@@ -83,9 +157,9 @@ const AlumniRegister = () => {
           <label>Enter your Gender</label>
           <select
             style={{ height: "40px" }}
-            name="branch"
+            name="gender"
             required
-            value={userRegister.branch}
+            value={userRegister.gender}
             onChange={handleRegisterChange}
           >
             <option>Select Gender</option>
@@ -93,11 +167,37 @@ const AlumniRegister = () => {
             <option value="female">Female</option>
           </select>
         </div>
+        <div className="login-input-box">
+          <label>Interested in</label>
+          <select
+            style={{ height: "40px" }}
+            name="theme"
+            required
+            value={userRegister.theme}
+            onChange={handleRegisterChange}
+          >
+            <option>Select Branch</option>
+            <option value="music">Singing</option>
+            <option value="dance">Dancing</option>
+            <option value="cp">CP</option>
+          </select>
+        </div>
 
         <div className="login-input-box">
-          <label>Enter your Passout Batch</label>
+          <label>Enter your Institution</label>
           <input
-            type="date"
+            type="text"
+            required
+            name="institution"
+            value={userRegister.institution}
+            onChange={handleRegisterChange}
+          />
+        </div>
+
+        <div className="login-input-box">
+          <label>Enter your Passout Year</label>
+          <input
+            type="number"
             required
             name="pbatch"
             value={userRegister.pbatch}
@@ -127,8 +227,8 @@ const AlumniRegister = () => {
           <input
             type="text"
             required
-            name="job"
-            value={userRegister.job}
+            name="currentPosition"
+            value={userRegister.currentPosition}
             onChange={handleRegisterChange}
           />
         </div>
@@ -138,14 +238,23 @@ const AlumniRegister = () => {
           <input
             type="text"
             required
-            name="loc"
-            value={userRegister.loc}
+            name="location"
+            value={userRegister.location}
             onChange={handleRegisterChange}
+          />
+        </div>
+        <div className="login-input-box">
+          <label>Image</label>
+          <input
+            type="file"
+            required
+            name="pic"
+            onChange={(e) => postImg(e.target.files[0])}
           />
         </div>
 
         <div className="login-input-box">
-          <button>Register</button>
+          <button>Submit</button>
         </div>
       </form>
       <div className="login-input-box" style={{ textAlign: "center" }}>
@@ -161,4 +270,3 @@ const AlumniRegister = () => {
 };
 
 export default AlumniRegister;
-
