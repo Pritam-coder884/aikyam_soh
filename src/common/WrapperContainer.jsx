@@ -11,15 +11,15 @@ const WrapperContainer = ({ children, window }) => {
   //   };
 
   return (
-  <>
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <HeaderWrapper />
-      <Box component="main" sx={{}}>
-        {children}
+    <>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <HeaderWrapper />
+        <Box component="main" sx={{}}>
+          {children}
+        </Box>
       </Box>
-    </Box>
-    <Footer />
-  </>
+      <Footer />
+    </>
   );
 };
 

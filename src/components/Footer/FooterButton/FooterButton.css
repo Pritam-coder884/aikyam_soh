@@ -1,7 +1,7 @@
 .footer-Button{
     border:none;
     outline: none;
-    background-color:gray;
+    background-color:rgb(255, 255, 255);
     cursor:pointer;
 }
 .footer-Button:hover{

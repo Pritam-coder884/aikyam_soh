@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import CountUp from "react-countup";
 
 const Facts = () => {
   return (
@@ -16,31 +17,31 @@ const Facts = () => {
       <Grid container direction="row" justifyContent="space-around">
         <Grid item>
           <Typography color="orange" variant="h3">
-            10,000+
+            <CountUp end={8000} enableScrollSpy={true} suffix={"+"} />
           </Typography>
           <Typography color="white">Alumni</Typography>
         </Grid>
         <Grid item>
           <Typography color="orange" variant="h3">
-            1000+
+            <CountUp end={1000} enableScrollSpy={true} suffix={"+"} />
           </Typography>
           <Typography color="white">Alumni outside India</Typography>
         </Grid>
         <Grid item>
           <Typography color="orange" variant="h3">
-            5000+
+            <CountUp end={5000} enableScrollSpy={true} suffix={"+"} />
           </Typography>
           <Typography color="white">Attendance at Renuinons</Typography>
         </Grid>
         <Grid item>
           <Typography color="orange" variant="h3">
-            50+
+            <CountUp end={50} enableScrollSpy={true} suffix={"+"} />
           </Typography>
           <Typography color="white"> CEOs at MNCs</Typography>
         </Grid>
         <Grid item>
           <Typography color="orange" variant="h3">
-            20+
+            <CountUp end={20} enableScrollSpy={true} suffix={"+"} />
           </Typography>
           <Typography color="white">CEOs at PCUs</Typography>
         </Grid>

@@ -5,10 +5,10 @@ const Newsletter = () => {
   return (
     <Grid
       container
-      p={3}
       justifyContent="center"
       direction="row"
       sx={{ backgroundColor: "lightyellow" }}
+      py={9}
     >
       <Grid container justifyContent="center">
         <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h5">

@@ -10,7 +10,7 @@ import React from "react";
 
 const Jobs = () => {
   return (
-    <Grid container p={3} direction="column">
+    <Grid container p={3} py={9} direction="column">
       <Grid item pb={1}>
         <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h4">
           Job Openings
@@ -27,9 +27,11 @@ const Jobs = () => {
                 Expected Salary : 8 LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
         <Grid item>
@@ -42,9 +44,11 @@ const Jobs = () => {
                 Expected Salary : 6LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
         <Grid item>
@@ -57,9 +61,11 @@ const Jobs = () => {
                 Expected Salary : 4LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
         <Grid item>
@@ -72,9 +78,11 @@ const Jobs = () => {
                 Expected Salary : 7LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
         <Grid item>
@@ -87,9 +95,11 @@ const Jobs = () => {
                 Expected Salary : 7LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
         <Grid item>
@@ -102,9 +112,11 @@ const Jobs = () => {
                 Expected Salary : 10LPA
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
+            <Grid item p={2} textAlign="right" direction="row">
+              <Button size="small" sx={{ color: "orange" }}>
+                Learn More
+              </Button>
+            </Grid>
           </Card>
         </Grid>
       </Grid>
