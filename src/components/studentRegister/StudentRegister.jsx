@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { app } from "../../utils/firebase/firebase.config";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../../pages/Login/Login.css";
-
-import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
+import { createStudent } from "../../utils/api/api.utils";
 
 const StudentRegister = () => {
   const navigate = useNavigate();
   const [userRegister, setUserRegister] = useState({
     name: "",
     email: "",
-    password: "",
     mobile: "",
     gender: "",
     qualification: "",
@@ -31,28 +26,12 @@ const StudentRegister = () => {
     regdno,
     pyear,
   } = userRegister;
-  console.log("state", userRegister);
 
-  const auth = getAuth();
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     // console.log(userRegister);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((response) => {
-        navigate("/");
-        sessionStorage.setItem(
-          "Auth Token",
-          response._tokenResponse.refreshToken
-        );
-      })
-      .catch((error) => {
-        if (error.code === "auth/weak-password") {
-          toast.error("Password should be at least 6 characters");
-        }
-        if (error.code === "auth/email-already-in-use") {
-          toast.error("Email Already in Use");
-        }
-      });
+    createStudent(userRegister)
+    navigate("/");
   };
   const handleRegisterChange = (e) => {
     setUserRegister({ ...userRegister, [e.target.name]: e.target.value });
@@ -108,7 +87,7 @@ const StudentRegister = () => {
           </select>
         </div>
 
-        {/* <div className="login-input-box">
+        <div className="login-input-box">
           <label>Enter your Institution Name</label>
           <input
             type="text"
@@ -117,7 +96,7 @@ const StudentRegister = () => {
             value={userRegister.institution}
             onChange={handleRegisterChange}
           />
-        </div> */}
+        </div>
 
         <div className="login-input-box">
           <label>Enter your Qualification</label>
@@ -172,7 +151,7 @@ const StudentRegister = () => {
         </div>
 
         <div className="login-input-box">
-          <button>Signup</button>
+          <button>Register</button>
         </div>
       </form>
       <div className="login-input-box" style={{ textAlign: "center" }}>

@@ -145,7 +145,7 @@ const AlumniRegister = () => {
         </div>
 
         <div className="login-input-box">
-          <button>Signup</button>
+          <button>Register</button>
         </div>
       </form>
       <div className="login-input-box" style={{ textAlign: "center" }}>
@@ -161,3 +161,4 @@ const AlumniRegister = () => {
 };
 
 export default AlumniRegister;
+

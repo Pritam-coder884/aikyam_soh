@@ -82,7 +82,7 @@ const Login = () => {
           <p>
             Don't have an account ?{" "}
             <span className="render-to-signup">
-              <Link to="/register">Sign up</Link>
+              <Link to="/authsignup">Sign up</Link>
             </span>
           </p>
         </div>
