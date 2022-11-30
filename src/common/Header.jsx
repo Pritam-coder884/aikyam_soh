@@ -23,7 +23,7 @@ const DrawerWrapper = () => {
   };
   React.useEffect(() => {
     let authToken = sessionStorage.getItem("Auth Token");
-    console.log(authToken);
+    // console.log(authToken);
     // if (authToken) {
     //     navigate('/')
     // }

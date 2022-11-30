@@ -17,48 +17,12 @@ const StudentRegister = () => {
     branch: "",
     pyear: "",
   });
-  // const {
-  //   name,
-  //   email,
-  //   gender,
-  //   mobile,
-  //   institution,
-  //   qualification,
-  //   pyear,
-  //   branch,
-  //   regdno,
-  // } = userRegister;
-
-
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-
-  
-    // try {
-    //   const res = await fetch("http://localhost:9000/student/add", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name,
-    //       email,
-    //       gender,
-    //       mobile,
-    //       institution,
-    //       qualification,
-    //       pyear,
-    //       branch,
-    //       regdno,
-    //     }),
-    //   });
-    //   console.log("res =   " + res);
-    //   const data = res.json();
-
     try {
-			const url = "http://localhost:9000/student/add";
+			const url = "http://localhost:7070/student";
 			const { userRegister: res } = await axios.post(url, userRegister);
-			// navigate("/login");
+			navigate("/login");
 			console.log(res.message);
 		} catch (error) {
 			if (

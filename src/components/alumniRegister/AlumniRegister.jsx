@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { app } from "../../utils/firebase/firebase.config";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../../pages/Login/Login.css";
-
-import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
 import axios from "axios";
 
 const AlumniRegister = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [userRegister, setUserRegister] = useState({
-    name: "",
-    email: "",
+    name:"",
+    email:"",
+    mobile:"",
+    gender:"",
+    interest:"",
+    institution:"",
+    pyear:"",
+    branch:"",
+    job:"",
+    location:"",
+    pic:"",
   });
 
   const postImg = async (pic) => {
@@ -33,85 +38,35 @@ const AlumniRegister = () => {
       console.log("pic url " + picUrl);
       setUserRegister({ ...userRegister, pic: picUrl });
     } catch (err) {
-      console.log(err);
+      if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
     }
   };
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-
-    const {
-      name,
-      email,
-      pic,
-      gender,
-      mobile,
-      institution,
-      pbatch,
-      branch,
-      currentPosition,
-      location,
-      theme,
-    } = userRegister;
+    // console.log(userRegister);
     try {
-      console.log({
-        name,
-        email,
-        pic,
-        gender,
-        mobile,
-        institution,
-        pbatch,
-        branch,
-        currentPosition,
-        location,
-        theme,
-      });
-      const res = await fetch("http://localhost:9000/alumni/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          pic,
-          gender,
-          mobile,
-          institution,
-          pbatch,
-          branch,
-          currentPosition,
-          location,
-          theme,
-        }),
-      });
-      // const res = await axios.post(
-      //   "http://localhost:9000/alumni/add",
-      //   {
-      //     name,
-      //     email,
-      //     pic,
-      //     gender,
-      //     mobile,
-      //     institution,
-      //     pbatch,
-      //     branch,
-      //     currentPosition,
-      //     location,
-      //   },
-      //   {
-      //     headers: {
-      //       "content-type": "text/plain",
-      //     },
-      //   }
-      // );
-      // console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+			const url = "http://localhost:7070/alumni";
+			const { userRegister: res } = await axios.post(url, userRegister);
+			navigate("/login");
+			console.log(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+   
   };
-  //Firebase part end
 
   const handleRegisterChange = (e) => {
     setUserRegister({ ...userRegister, [e.target.name]: e.target.value });
@@ -170,15 +125,17 @@ const AlumniRegister = () => {
           <label>Interested in</label>
           <select
             style={{ height: "40px" }}
-            name="theme"
+            name="interest"
             required
-            value={userRegister.theme}
+            value={userRegister.interest}
             onChange={handleRegisterChange}
           >
-            <option>Select Branch</option>
+            <option>Interested in</option>
             <option value="music">Singing</option>
             <option value="dance">Dancing</option>
-            <option value="cp">CP</option>
+            <option value="cp">Competitive Programming</option>
+            <option value="ro">Robotics</option>
+            <option value="design">Designing</option>
           </select>
         </div>
 
@@ -198,8 +155,8 @@ const AlumniRegister = () => {
           <input
             type="number"
             required
-            name="pbatch"
-            value={userRegister.pbatch}
+            name="pyear"
+            value={userRegister.pyear}
             onChange={handleRegisterChange}
           />
         </div>
@@ -226,8 +183,8 @@ const AlumniRegister = () => {
           <input
             type="text"
             required
-            name="currentPosition"
-            value={userRegister.currentPosition}
+            name="job"
+            value={userRegister.job}
             onChange={handleRegisterChange}
           />
         </div>
