@@ -4,13 +4,10 @@ import { useNavigate, Link } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import { app } from "../../utils/firebase/firebase.config";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithGooglePopup } from "../../utils/firebase/firebase.config";
+
+import Box from "@mui/material/Box";
 
 const Login = () => {
   const auth = getAuth();

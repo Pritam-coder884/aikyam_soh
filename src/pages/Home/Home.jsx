@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import WrapperContainer from "../../common/WrapperContainer";
 
+
 const Home = () => {
   let navigate = useNavigate();
   const handleLogout = () => {

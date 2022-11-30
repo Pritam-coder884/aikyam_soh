@@ -1,65 +1,61 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { app } from "../../utils/firebase/firebase.config";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../../pages/Login/Login.css";
 
 import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
+import axios from "axios";
 
 const StudentRegister = () => {
   const navigate = useNavigate();
   const [userRegister, setUserRegister] = useState({
     name: "",
     email: "",
-    password: "",
-    mobile: "",
-    gender: "",
-    qualification: "",
-    branch: "",
-    regdno: "",
-    pyear: "",
   });
-  const {
-    name,
-    email,
-    password,
-    mobile,
-    gender,
-    qualification,
-    branch,
-    regdno,
-    pyear,
-  } = userRegister;
-  console.log("state", userRegister);
 
-  const auth = getAuth();
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userRegister);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((response) => {
-        navigate("/");
-        sessionStorage.setItem(
-          "Auth Token",
-          response._tokenResponse.refreshToken
-        );
-      })
-      .catch((error) => {
-        if (error.code === "auth/weak-password") {
-          toast.error("Password should be at least 6 characters");
-        }
-        if (error.code === "auth/email-already-in-use") {
-          toast.error("Email Already in Use");
-        }
+    const {
+      name,
+      email,
+      gender,
+      mobile,
+      institution,
+      qualification,
+      pyear,
+      branch,
+      regdno,
+    } = userRegister;
+    try {
+      const res = await fetch("http://localhost:9000/student/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          gender,
+          mobile,
+          institution,
+          qualification,
+          pyear,
+          branch,
+          regdno,
+        }),
       });
+      console.log("res =   " + res);
+      const data = res.json();
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   const handleRegisterChange = (e) => {
     setUserRegister({ ...userRegister, [e.target.name]: e.target.value });
   };
+
   return (
     <div>
-      <h1>Student Registration</h1>
       <form onSubmit={handleRegisterSubmit}>
         <div className="login-input-box">
           <label>Enter your Name</label>
@@ -71,6 +67,7 @@ const StudentRegister = () => {
             onChange={handleRegisterChange}
           />
         </div>
+
         <div className="login-input-box">
           <label>Enter your Email</label>
           <input
@@ -78,16 +75,6 @@ const StudentRegister = () => {
             required
             name="email"
             value={userRegister.email}
-            onChange={handleRegisterChange}
-          />
-        </div>
-        <div className="login-input-box">
-          <label>Enter your Password</label>
-          <input
-            type="password"
-            required
-            name="password"
-            value={userRegister.password}
             onChange={handleRegisterChange}
           />
         </div>
@@ -118,7 +105,7 @@ const StudentRegister = () => {
           </select>
         </div>
 
-        {/* <div className="login-input-box">
+        <div className="login-input-box">
           <label>Enter your Institution Name</label>
           <input
             type="text"
@@ -127,7 +114,7 @@ const StudentRegister = () => {
             value={userRegister.institution}
             onChange={handleRegisterChange}
           />
-        </div> */}
+        </div>
 
         <div className="login-input-box">
           <label>Enter your Qualification</label>
@@ -173,7 +160,7 @@ const StudentRegister = () => {
         <div className="login-input-box">
           <label>Enter your Passout Year</label>
           <input
-            type="date"
+            type="number"
             required
             name="pyear"
             value={userRegister.pyear}
@@ -182,17 +169,9 @@ const StudentRegister = () => {
         </div>
 
         <div className="login-input-box">
-          <button>Signup</button>
+          <button>Submit</button>
         </div>
       </form>
-      <div className="login-input-box" style={{ textAlign: "center" }}>
-        <p>
-          Already have an account !{" "}
-          <span className="render-to-signup">
-            <Link to="/login">Sign in</Link>
-          </span>
-        </p>
-      </div>
     </div>
   );
 };

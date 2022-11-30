@@ -1,49 +1,73 @@
 import React, { useState } from "react";
 import "../Login/Login.css";
-import { ToastContainer } from "react-toastify";
+import { useNavigate, Link } from "react-router-dom";
+import "../Login/Login.css";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import StudentRegister from "../../components/studentRegister/StudentRegister";
-import AlumniRegister from "../../components/alumniRegister/AlumniRegister";
+
+import { app } from "../../utils/firebase/firebase.config";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
 const Signup = () => {
-  const [portal,setPortal]=useState("student");
-  const [isChecked, setIsChecked] = useState(true);
-  const handleRadioSubmit=(e)=>{
-    setPortal(()=>e.target.value);
-    if(e.target.value === "student"){
-      setIsChecked(true);
-    }else{
-      setIsChecked(false);
-    }
-  }
+  const auth = getAuth(app);
+
+  const navigate = useNavigate();
+
+  const [userSignUp, setUserSignUp] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSignUpUser = (e) => {
+    e.preventDefault();
+
+    createUserWithEmailAndPassword(auth, userSignUp.email, userSignUp.password)
+      .then((res) => {
+        sessionStorage.setItem("Auth Token", res._tokenResponse.refreshToken);
+        navigate("/details");
+      })
+      .catch((error) => {
+        if (error.code === "auth/weak-password") {
+          toast.error("Password should be at least 6 characters");
+        }
+        if (error.code === "auth/email-already-in-use") {
+          toast.error("Email Already in Use");
+        }
+      });
+  };
+
+  const handleChangeSignUpUser = (e) => {
+    setUserSignUp({ ...userSignUp, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="login-container">
-      <div>
-        <h1>Register as</h1>
-        <div>
-          <input
-            type="radio"
-            name="register"
-            value="student"
-            defaultChecked={isChecked}
-            onClick={handleRadioSubmit}
-          />{" "}
-          Student
-          <br />
-          <br />
-          <input
-            type="radio"
-            name="register"
-            value="alumni"
-            defaultChecked={!isChecked}
-            onClick={handleRadioSubmit}
-          />{" "}
-          Alumni
-        </div>
-      </div>
-      <div className="login-box" style={{ marginTop: "8vh" }}>
-        {portal === "student" ? <StudentRegister/> : <AlumniRegister/>}
+      <div className="login-box">
+        <form onSubmit={handleSignUpUser}>
+          <div className="login-input-box">
+            <label>Enter your Email</label>
+            <input
+              type="email"
+              required
+              onChange={handleChangeSignUpUser}
+              name="email"
+              value={userSignUp.email}
+            />
+          </div>
+          <div className="login-input-box">
+            <label>Enter your Password</label>
+            <input
+              type="password"
+              required
+              onChange={handleChangeSignUpUser}
+              name="password"
+              value={userSignUp.password}
+            />
+          </div>
+          <div className="login-input-box">
+            <button type="submit">Sign up</button>
+          </div>
+        </form>
       </div>
       <ToastContainer />
     </div>
