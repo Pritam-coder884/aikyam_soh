@@ -3,7 +3,13 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <Grid container p={3} justifyContent="center">
+    <Grid
+      container
+      p={3}
+      justifyContent="center"
+      direction="row"
+      sx={{ backgroundColor: "lightyellow" }}
+    >
       <Grid container justifyContent="center">
         <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h5">
           Subscribe To Get Weekly Newsletter From Alumni

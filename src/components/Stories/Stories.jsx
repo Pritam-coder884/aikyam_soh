@@ -26,21 +26,15 @@ const Stories = () => {
         <div className="Stories-container">
           <div className="Stories-container-left">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEbc01cllLpNLxYKBlSsM8MxZSeA4znPySw&usqp=CAU"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WWJEImdtBVeLhMDBgSTAfvvju5KltNqo2A&usqp=CAU"
               alt=""
             />
-            <h3>Lorem ipsum dolor</h3>
           </div>
           <div className="Stories-container-right">
             <h1>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
               qui quia et ratione
             </h1>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium officia blanditiis dicta! Est labore voluptatem
-              delectus.
-            </span>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
               hic quasi iste nihil magni cum doloribus tenetur ullam odio
@@ -54,21 +48,15 @@ const Stories = () => {
         <div className="Stories-container">
           <div className="Stories-container-left">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEbc01cllLpNLxYKBlSsM8MxZSeA4znPySw&usqp=CAU"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WWJEImdtBVeLhMDBgSTAfvvju5KltNqo2A&usqp=CAU"
               alt=""
             />
-            <h3>Lorem ipsum dolor</h3>
           </div>
           <div className="Stories-container-right">
             <h1>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
               qui quia et ratione
             </h1>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium officia blanditiis dicta! Est labore voluptatem
-              delectus.
-            </span>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
               hic quasi iste nihil magni cum doloribus tenetur ullam odio
@@ -82,21 +70,15 @@ const Stories = () => {
         <div className="Stories-container">
           <div className="Stories-container-left">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEbc01cllLpNLxYKBlSsM8MxZSeA4znPySw&usqp=CAU"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WWJEImdtBVeLhMDBgSTAfvvju5KltNqo2A&usqp=CAU"
               alt=""
             />
-            <h3>Lorem ipsum dolor</h3>
           </div>
           <div className="Stories-container-right">
             <h1>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
               qui quia et ratione
             </h1>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium officia blanditiis dicta! Est labore voluptatem
-              delectus.
-            </span>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
               hic quasi iste nihil magni cum doloribus tenetur ullam odio
