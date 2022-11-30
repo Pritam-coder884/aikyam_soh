@@ -13,7 +13,7 @@ const UpcomingEvents = () => {
         sx={{ backgroundColor: "orange", padding: "4rem" }}
         xs={6}
       >
-        <Typography sx={{ color: "white", fontWeight: "600" }}>
+        <Typography sx={{ fontWeight: "600", color: "white" }}>
           <Divider textAlign="left" light="true">
             Events
           </Divider>
@@ -47,7 +47,9 @@ const UpcomingEvents = () => {
       >
         <Grid item>
           <Divider textAlign="left">
-            <Typography sx={{ fontWeight: "600" }}>Upcoming Events</Typography>
+            <Typography sx={{ fontWeight: "600", color: "black" }}>
+              Upcoming Events
+            </Typography>
           </Divider>
         </Grid>
         <Grid item p={2}>

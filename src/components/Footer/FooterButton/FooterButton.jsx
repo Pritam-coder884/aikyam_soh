@@ -1,14 +1,19 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./FooterButton.css";
 
-const FooterButton = ({title}) => {
+const FooterButton = ({ title, navigate }) => {
+  const history = useNavigate();
   return (
-    <div>
-        <button className='footer-Button'>
-            {title}
-        </button>
-    </div>
-  )
-}
+    <button
+      className="footer-Button"
+      onClick={() => {
+        history(`${navigate}`);
+      }}
+    >
+      {title}
+    </button>
+  );
+};
 
-export default FooterButton
+export default FooterButton;
