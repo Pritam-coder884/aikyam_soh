@@ -1,0 +1,9 @@
+.footer-Button{
+    border:none;
+    outline: none;
+    background-color: white;
+    cursor:pointer;
+}
+.footer-Button:hover{
+    color:orange;
+}

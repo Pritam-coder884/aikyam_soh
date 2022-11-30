@@ -1,0 +1,39 @@
+.footer-container{
+    /* display:flex;
+    align-items: center; */
+    padding:4rem;
+}
+.Footer{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:4rem;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.footer-box h1{
+    font-size: medium;
+    color:rgb(95, 91, 91);
+}
+.footer-box-button button{
+    background-color:orange;
+    cursor: pointer;
+    padding:20px 55px;
+    border: none;
+}
+.footer-box-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+.footer-horizontal-line{
+    text-align: center;
+    height:1px;
+}
+.footer-horizontal-line p{
+    margin-top:2rem;
+}
