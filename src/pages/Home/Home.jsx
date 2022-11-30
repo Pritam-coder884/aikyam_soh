@@ -1,29 +1,27 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import SimpleImageSlider from "react-simple-image-slider";
 import WrapperContainer from "../../common/WrapperContainer";
-
+import { images } from "../../assets/collgeImages";
 
 const Home = () => {
-  let navigate = useNavigate();
-  const handleLogout = () => {
-    sessionStorage.removeItem("Auth Token");
-    navigate("/login");
-  };
-  useEffect(() => {
-    let authToken = sessionStorage.getItem("Auth Token");
-    console.log(authToken);
-    // if (authToken) {
-    //     navigate('/')
-    // }
+  let history = useNavigate();
 
-    // if (!authToken) {
-    //     navigate('/signup')
-    // }
-  }, []);
+  const imagesGallery = [
+    { url: images.college1 },
+    { url: images.college2 },
+    { url: images.college3 },
+  ];
   return (
     <WrapperContainer>
-      Home page
-      <button onClick={handleLogout}>Log out</button>
+      <SimpleImageSlider
+        width={"100vw"}
+        height={"60vh"}
+        images={imagesGallery}
+        showBullets={true}
+        showNavs={true}
+      />
+      <button>Log out</button>
     </WrapperContainer>
   );
 };

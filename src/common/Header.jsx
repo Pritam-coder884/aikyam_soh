@@ -17,8 +17,22 @@ import { useNavigate } from "react-router-dom";
 
 const DrawerWrapper = () => {
   const history = useNavigate();
+  const handleLogout = () => {
+    sessionStorage.removeItem("Auth Token");
+    history("/login");
+  };
+  React.useEffect(() => {
+    let authToken = sessionStorage.getItem("Auth Token");
+    console.log(authToken);
+    // if (authToken) {
+    //     navigate('/')
+    // }
+
+    // if (!authToken) {
+    //     navigate('/signup')
+    // }
+  }, []);
   const pages = ["Jobs", "Events", "Stories"];
-  const settings = ["Profile", "Logout"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -148,11 +162,12 @@ const DrawerWrapper = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem key="Profile" onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
+              <MenuItem key="logout" onClick={handleLogout}>
+                <Typography textAlign="center">Log out</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
