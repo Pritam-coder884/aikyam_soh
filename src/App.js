@@ -15,6 +15,7 @@ import Job from "./pages/job/Job";
 import Alumni from "./pages/Alumni/Alumni";
 import CardStu from "./components/Card/card/CardStu";
 import CardAlum from "./components/Card/card/CardAlum";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
 // const socket = socketIO.connect("http://localhost:9000");
 
 const App = () => {
@@ -27,7 +28,8 @@ const App = () => {
     }
   }, []);
   return (
-    <div>
+    <StyledEngineProvider injectFirst>
+      <CssBaseline />
       <Routes>
         <Route path="/events" element={<Event />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -44,7 +46,7 @@ const App = () => {
         {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
       </Routes>
-    </div>
+    </StyledEngineProvider>
   );
 };
 
