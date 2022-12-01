@@ -1,6 +1,7 @@
 import { Box, Toolbar } from "@mui/material";
 import React from "react";
 import Footer from "../components/Footer/Footer";
+import Newsletter from "../components/Newsletter/Newsletter";
 import HeaderWrapper from "./Header";
 
 const WrapperContainer = ({ children, window }) => {
@@ -18,6 +19,7 @@ const WrapperContainer = ({ children, window }) => {
           {children}
         </Box>
       </Box>
+      <Newsletter />
       <Footer />
     </>
   );

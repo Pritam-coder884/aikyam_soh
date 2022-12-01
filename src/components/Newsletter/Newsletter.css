@@ -1,0 +1,22 @@
+.newsletter{
+    width: 400px;
+}
+
+@media screen and (max-width:900px){
+    .newsletter{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .newsletter{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:412px){
+    .newsletter{
+        width: 280px;
+    }
+}
+

@@ -1,0 +1,19 @@
+@media screen and (max-width:1200px){
+    .hero-section{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .animation{
+        height: 30rem;
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .animation{
+        height:20rem;
+        width: 20rem;
+    }
+}

@@ -14,6 +14,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo2.png";
 
 const DrawerWrapper = () => {
   const history = useNavigate();
@@ -54,7 +55,13 @@ const DrawerWrapper = () => {
     <AppBar position="static" sx={{ backgroundColor: "orange" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <IconButton
+            sx={{ padding: 0, display: { xs: "none", md: "flex" }, mr: 1 }}
+          >
+            <img src={logo} alt="" width="50px" />
+          </IconButton>
+
           <Typography
             variant="h6"
             noWrap
@@ -72,7 +79,6 @@ const DrawerWrapper = () => {
           >
             AIKYAM
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -140,7 +146,11 @@ const DrawerWrapper = () => {
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <IconButton
+            sx={{ padding: 0, display: { xs: "flex", md: "none" }, mr: 1 }}
+          >
+            <img src={logo} alt="" width="50px" />
+          </IconButton>
           <Typography
             variant="h5"
             noWrap
@@ -201,7 +211,6 @@ const DrawerWrapper = () => {
               Reunion
             </Button>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

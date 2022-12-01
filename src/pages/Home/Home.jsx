@@ -10,6 +10,7 @@ import Jobs from "../../components/Jobs/Jobs";
 import Divider from "@mui/material/Divider";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import Lottie from "react-lottie";
+import "./Home.css";
 import animationData from "../../assets/animation/55964-college-student-jumping.json";
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
           item
           xs={12}
           height="100vh"
+          className="hero-section"
           sx={{
             background:
               "linear-gradient(144deg, rgba(131,58,180,1) 0%, rgba(255,255,255,1) 0%, rgba(255,167,44,1) 100%)",
@@ -46,8 +48,8 @@ const Home = () => {
             showBullets={true}
             showNavs={true}
           /> */}
-          <Grid container direction="row" height="100vh">
-            <Grid item xs={12} p={4} sm={12} lg={6} md={6} xl={6}>
+          <Grid container direction="row" height="100%">
+            <Grid item xs={12} p={4} sm={12} md={12} lg={4} xl={6}>
               <Grid
                 container
                 direction="column"
@@ -102,11 +104,12 @@ const Home = () => {
               xs={12}
               p={4}
               sm={12}
-              lg={6}
-              md={6}
+              md={12}
+              lg={8}
               xl={6}
-              width="41rem"
-              height="41rem"
+              width="40rem"
+              height="40rem"
+              className="animation"
             >
               <Lottie options={defaultOptions} />
             </Grid>
@@ -120,10 +123,6 @@ const Home = () => {
         </Grid>
         <Grid item xs={12}>
           <Jobs />
-        </Grid>
-        <Grid item xs={12}>
-          <Divider />
-          <Newsletter />
         </Grid>
       </Grid>
     </WrapperContainer>

@@ -1,5 +1,6 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
+import "./Newsletter.css";
 
 const Newsletter = () => {
   return (
@@ -11,14 +12,19 @@ const Newsletter = () => {
       py={9}
     >
       <Grid container justifyContent="center">
-        <Typography sx={{ color: "white", fontWeight: "600" }} variant="h5">
+        <Typography
+          sx={{ color: "white", fontWeight: "600" }}
+          variant="h5"
+          textAlign="center"
+        >
           Subscribe To Get Weekly Newsletter From Alumni
         </Typography>
       </Grid>
       <Grid container justifyContent="center">
         <Grid item px={1}>
           <TextField
-            sx={{ width: "500px" }}
+            // sx={{ width: "400px" }}
+            className="newsletter"
             inputProps={{
               style: {
                 height: "20px",

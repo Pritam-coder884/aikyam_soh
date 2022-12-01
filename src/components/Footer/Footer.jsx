@@ -4,6 +4,7 @@ import "./Footer.css";
 import { Adb, Facebook, Instagram, LinkedIn } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/images/logo2.png";
 
 const Footer = () => {
   const history = useNavigate();
@@ -13,7 +14,11 @@ const Footer = () => {
         <div className="Footer">
           <div className="footer-box" style={{ width: "30vw" }}>
             <div>
-              <Adb sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+              <IconButton
+                sx={{ padding: 0, display: { xs: "none", md: "flex" }, mr: 1 }}
+              >
+                <img src={logo} alt="" width="50px" />
+              </IconButton>
             </div>
             <div>AIKYAM, CONNECTING ALUMS AND STUDENTS.</div>
           </div>
