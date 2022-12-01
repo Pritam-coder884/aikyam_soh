@@ -55,19 +55,6 @@ const AlumniRegister = () => {
     } = userRegister;
 
     try {
-      console.log({
-        name,
-        email,
-        pic,
-        gender,
-        mobile,
-        institution,
-        pbatch,
-        branch,
-        currentPosition,
-        location,
-        theme,
-      });
       const res = await fetch("http://localhost:9000/alumni/add", {
         method: "POST",
         headers: {

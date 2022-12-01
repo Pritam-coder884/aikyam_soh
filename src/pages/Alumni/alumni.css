@@ -1,0 +1,35 @@
+.alumni-search-bar {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    margin: 10px auto;
+    align-items: center;
+}
+
+.alumni-search-bar input {
+    border-radius: 10px;
+    flex: 1;
+    padding: 10px;
+    font-size: 20px;
+
+}
+
+.alumni-search-icon {
+    position: absolute;
+    right: 10px;
+}
+
+.alumni-search-icon:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 750px) {
+    .alumni-search-icon input {
+        width: 600px;
+    }
+
+    .alumni-card {
+        grid-template-columns: 1fr;
+    }
+}
