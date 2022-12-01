@@ -12,8 +12,7 @@ import StoriesPage from "./pages/Stories/Stories";
 import ReunionPage from "./pages/Reunion/ReunionPage";
 import GalleryPage from "./pages/gallery/Gallery";
 import Job from "./pages/job/Job";
-const socket = socketIO.connect("http://localhost:9000");
-// const socket = socketIO.connect('http://localhost:9000');
+// const socket = socketIO.connect("http://localhost:9000");
 
 const App = () => {
   const navigate = useNavigate();
@@ -32,8 +31,8 @@ const App = () => {
         <Route path="/register" element={<Signup />}></Route>
         <Route path="/authsignup" element={<AuthSignup />}></Route>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
-        <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
+        {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
+        <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
         <Route path="/stories" element={<StoriesPage />}></Route>
         <Route path="/reunion" element={<ReunionPage />}></Route>
         <Route path="/gallery" element={<GalleryPage />}></Route>

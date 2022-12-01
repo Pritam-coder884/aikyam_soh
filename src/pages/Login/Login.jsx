@@ -50,6 +50,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
+        <h1 style={{textAlign:"center"}}>Sign in</h1>
         <form onSubmit={handleloginUser}>
           <div className="login-input-box">
             <label>Enter your Email</label>
@@ -72,7 +73,7 @@ const Login = () => {
             />
           </div>
           <div className="login-input-box">
-            <button>Login</button>
+            <button>Sign in</button>
           </div>
         </form>
         <div className="login-input-box">
