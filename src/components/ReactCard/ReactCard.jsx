@@ -5,7 +5,7 @@ import EventIcon from "@mui/icons-material/Event";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import z1 from "../../assets/images/z1.png";
 import z2 from "../../assets/images/z2.jpg";
-import z3 from "../../assets/images/z3.png";
+import z3 from "../../assets/images/z3.jpeg";
 import s1 from "../../assets/images/s1.jpg";
 import s2 from "../../assets/images/s2.png";
 import s3 from "../../assets/images/s3.jpg";

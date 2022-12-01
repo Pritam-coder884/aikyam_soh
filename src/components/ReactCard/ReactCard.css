@@ -16,5 +16,8 @@
     align-items: center;
 }
 .rectangular-card-image{
-    height:200px;
+    width:27vw;
+}
+.rectangular-card-description p{
+    font-size:15px;
 }

@@ -1,3 +1,18 @@
+.events-heading h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+.events-heading p{
+    text-align: center;
+    color:gray;
+    font-size:15px;
+}
+.upcoming-events{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .events-box{
     padding:0.5rem 4rem;
     display: flex;
