@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h1 style={{textAlign:"center"}}>Signup Form</h1>
+        <h1 style={{textAlign:"center"}}>Signup</h1>
         <form onSubmit={handleRegisterSubmit}>
           <div className="login-input-box">
             <label>Enter your Name</label>
