@@ -30,7 +30,15 @@ const Home = () => {
   return (
     <WrapperContainer>
       <Grid container xs={12}>
-        <Grid item xs={12} height="100vh">
+        <Grid
+          item
+          xs={12}
+          height="100vh"
+          sx={{
+            background:
+              "linear-gradient(144deg, rgba(131,58,180,1) 0%, rgba(255,255,255,1) 0%, rgba(255,167,44,1) 100%)",
+          }}
+        >
           {/* <SimpleImageSlider
             width={"100vw"}
             height={"60vh"}
@@ -44,19 +52,31 @@ const Home = () => {
                 container
                 direction="column"
                 justifyContent="center"
-                alignItems="center"
+                alignItems="flex-start"
                 height="100%"
               >
-                <Grid item>
+                <Grid item pb={3}>
                   <Typography
                     variant="h2"
                     sx={{
                       fontWeight: 600,
                       fontFamily: "Quicksand, sans-serif",
                     }}
-                    textAlign="center"
+                    textAlign="left"
                   >
                     AIKYAM
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 600,
+                      fontFamily: "Quicksand, sans-serif",
+                    }}
+                    textAlign="left"
+                  >
+                    Aikyam is a Sanskrit word which means Unity.
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -66,9 +86,13 @@ const Home = () => {
                       fontWeight: 400,
                       fontFamily: "Quicksand, sans-serif",
                     }}
-                    textAlign="center"
+                    textAlign="left"
                   >
-                    Aikyam is a Sanskrit word which means Unity.
+                    Aikyam will be helpful in connection and registering the
+                    data of the Alumni. We are providing a web-based solution
+                    for retention of data of the Alumni so that we can track and
+                    maintain alumni interaction among students who have
+                    graduated from educational institutions across Odisha.
                   </Typography>
                 </Grid>
               </Grid>

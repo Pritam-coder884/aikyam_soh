@@ -7,11 +7,11 @@ const Newsletter = () => {
       container
       justifyContent="center"
       direction="row"
-      sx={{ backgroundColor: "lightyellow" }}
+      sx={{ backgroundColor: "orange" }}
       py={9}
     >
       <Grid container justifyContent="center">
-        <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h5">
+        <Typography sx={{ color: "white", fontWeight: "600" }} variant="h5">
           Subscribe To Get Weekly Newsletter From Alumni
         </Typography>
       </Grid>
@@ -22,13 +22,22 @@ const Newsletter = () => {
             inputProps={{
               style: {
                 height: "20px",
+                backgroundColor: "white",
+                borderRadius: "1rem",
+                border: "none !important",
               },
             }}
-            id="outlined-name"
-            label="Email"
+            label="Enter Your Email"
           />
         </Grid>
-        <Button variant="contained" sx={{ backgroundColor: "orange" }}>
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "white",
+            color: "orange",
+            borderRadius: "1rem",
+          }}
+        >
           Subscribe
         </Button>
       </Grid>

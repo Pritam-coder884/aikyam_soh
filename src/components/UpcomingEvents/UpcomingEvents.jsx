@@ -53,6 +53,7 @@ const UpcomingEvents = () => {
           backgroundColor: "white",
           variant: "fullWidth",
           padding: "4rem",
+          border: "3px solid orange",
         }}
         xs={12}
         md={8}
