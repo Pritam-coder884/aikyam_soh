@@ -11,46 +11,63 @@ const UpcomingEvents = () => {
         direction="column"
         item
         sx={{ backgroundColor: "orange", padding: "4rem" }}
-        xs={6}
+        xs={12}
+        md={4}
+        lg={4}
+        xl={4}
+        sm={6}
       >
-        <Typography sx={{ fontWeight: "600", color: "white" }}>
-          <Divider textAlign="left" light="true">
-            Events
-          </Divider>
+        <Typography
+          sx={{ fontWeight: "600", color: "white" }}
+          textAlign="center"
+        >
+          <Divider textAlign="center">Events</Divider>
         </Typography>
 
-        <Typography sx={{ color: "white" }} variant="h5">
+        <Typography sx={{ color: "white" }} variant="h5" textAlign="center">
           Webinar on Competitve Programming
         </Typography>
-        <Grid container direction="row" spacing={2}>
+        <Grid container direction="row" spacing={2} justifyContent="center">
           <Grid item>
-            <EventAvailableIcon />
+            <EventAvailableIcon sx={{ color: "white" }} />
           </Grid>
           <Grid item>
-            <Typography sx={{ color: "white" }}>25th December, 2022</Typography>
+            <Typography sx={{ color: "white" }} textAlign="center">
+              25th December, 2022
+            </Typography>
           </Grid>
         </Grid>
         <Grid item>
           <Grid item>
-            <Typography sx={{ color: "white" }} variant="h4">
+            <Typography sx={{ color: "white" }} variant="h4" textAlign="center">
               <Countdown date="2022-12-25T00:00:00" />
             </Typography>
           </Grid>
         </Grid>
       </Grid>
+
       <Grid
         container
         item
-        sx={{ backgroundColor: "white", variant: "fullWidth", padding: "4rem" }}
-        xs={6}
+        sx={{
+          backgroundColor: "white",
+          variant: "fullWidth",
+          padding: "4rem",
+        }}
+        xs={12}
+        md={8}
+        lg={8}
+        xl={8}
+        sm={6}
         direction="column"
       >
         <Grid item>
-          <Divider textAlign="left">
-            <Typography sx={{ fontWeight: "600", color: "black" }}>
-              Upcoming Events
-            </Typography>
-          </Divider>
+          <Typography
+            sx={{ fontWeight: "600", color: "black" }}
+            textAlign="center"
+          >
+            <Divider textAlign="center">Upcoming Events</Divider>
+          </Typography>
         </Grid>
         <Grid item p={2}>
           <Grid item>

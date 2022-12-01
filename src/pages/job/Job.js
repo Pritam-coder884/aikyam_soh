@@ -15,6 +15,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
 import { useEffect } from "react";
+import WrapperContainer from "../../common/WrapperContainer";
 
 const Job = () => {
   const addEvent = () => {};
@@ -131,7 +132,7 @@ const Job = () => {
   }
 
   return (
-    <>
+    <WrapperContainer>
       <AddEvent />
       {cards.map((card) => (
         <MakeCard
@@ -149,7 +150,7 @@ const Job = () => {
           tools={card.tools}
         />
       ))}
-    </>
+    </WrapperContainer>
   );
 };
 

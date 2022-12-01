@@ -37,7 +37,7 @@ const App = () => {
         <Route path="/stories" element={<StoriesPage />}></Route>
         <Route path="/reunion" element={<ReunionPage />}></Route>
         <Route path="/gallery" element={<GalleryPage />}></Route>
-        <Route path="/job" element={<Job />}></Route>
+        <Route path="/jobs" element={<Job />}></Route>
         {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
       </Routes>

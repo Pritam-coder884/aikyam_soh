@@ -10,7 +10,7 @@ import React from "react";
 
 const Jobs = () => {
   return (
-    <Grid container p={3} py={9} direction="column">
+    <Grid container p={3} pb={9} direction="column">
       <Grid item pb={1}>
         <Typography sx={{ color: "orange", fontWeight: "600" }} variant="h4">
           Job Openings

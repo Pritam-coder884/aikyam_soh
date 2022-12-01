@@ -29,8 +29,8 @@ const Home = () => {
   };
   return (
     <WrapperContainer>
-      <Grid container>
-        <Grid item>
+      <Grid container xs={12}>
+        <Grid item xs={12} height="100vh">
           {/* <SimpleImageSlider
             width={"100vw"}
             height={"60vh"}
@@ -38,29 +38,57 @@ const Home = () => {
             showBullets={true}
             showNavs={true}
           /> */}
-          <Grid container direction="row">
-            <Grid
-              container
-              xs={6}
-              p={4}
-              // alignItems="center"
-              // justifyContent="center"
-            >
-              <Typography variant="h4">AIKYAM</Typography>
-
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci mollitia quis laboriosam in eius necessitatibus
-                perferendis eaque explicabo fugit atque?
-              </Typography>
+          <Grid container direction="row" height="100vh">
+            <Grid item xs={12} p={4} sm={12} lg={6} md={6} xl={6}>
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                height="100%"
+              >
+                <Grid item>
+                  <Typography
+                    variant="h2"
+                    sx={{
+                      fontWeight: 600,
+                      fontFamily: "Quicksand, sans-serif",
+                    }}
+                    textAlign="center"
+                  >
+                    AIKYAM
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 400,
+                      fontFamily: "Quicksand, sans-serif",
+                    }}
+                    textAlign="center"
+                  >
+                    Aikyam is a Sanskrit word which means Unity.
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
-
-            <Grid item xs={6}>
+            <Grid
+              item
+              xs={12}
+              p={4}
+              sm={12}
+              lg={6}
+              md={6}
+              xl={6}
+              width="41rem"
+              height="41rem"
+            >
               <Lottie options={defaultOptions} />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item xs={12}>
           <UpcomingEvents />
         </Grid>
         <Grid item xs={12}>
