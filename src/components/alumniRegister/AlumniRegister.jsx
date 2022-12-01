@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Login/Login.css";
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const AlumniRegister = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const AlumniRegister = () => {
     e.preventDefault();
     // console.log(userRegister);
     try {
-      const url = "http://localhost:7070/alumni";
+      const url = `${API_URL}/alumni`;
       const { userRegister: res } = await axios.post(url, userRegister);
       navigate("/login");
       console.log(res.message);

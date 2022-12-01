@@ -14,7 +14,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
 import { useEffect } from "react";
-import WrapperContainer from "../../common/WrapperContainer";
 
 const Job = () => {
   const addEvent = () => {};
@@ -38,6 +37,28 @@ const Job = () => {
       if (event.target.name === "tools" || event.target.name === "languages") {
         setJob({ ...job, [event.target.name]: event.target.value.split(" ") });
       } else setJob({ ...job, [event.target.name]: event.target.value });
+    };
+
+    const postImg = async (pic) => {
+      try {
+        const data = new FormData();
+        data.append("upload_preset", "alumnipics");
+        data.append("file", pic);
+
+        const res = await fetch(
+          "https://api.cloudinary.com/v1_1/alokranjanjoshi07567/image/upload",
+          {
+            method: "POST",
+            body: data,
+          }
+        );
+        const resData = await res.json();
+        const picUrl = resData.url.toString();
+        console.log("pic url " + picUrl);
+        setJob({ ...job, logo: picUrl });
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     return (
@@ -73,12 +94,15 @@ const Job = () => {
               onChange={handleChange}
               placeholder="company"
             />
-            <input
-              type="text"
-              name="logo"
-              onChange={handleChange}
-              placeholder="logo"
-            />
+            <div className="login-input-box">
+              <label>Image</label>
+              <input
+                type="file"
+                required
+                name="pic"
+                onChange={(e) => postImg(e.target.files[0])}
+              />
+            </div>
             <input
               type="text"
               name="position"
@@ -131,25 +155,28 @@ const Job = () => {
   }
 
   return (
-    <WrapperContainer>
+    <>
       <AddEvent />
-      {cards.map((card) => (
-        <MakeCard
-          logo={card.logo}
-          company={card.company}
-          neww={card.neww}
-          position={card.position}
-          featured={card.featured}
-          postedAt={card.postedAt}
-          contract={card.contract}
-          location={card.location}
-          role={card.role}
-          level={card.level}
-          languages={card.languages}
-          tools={card.tools}
-        />
-      ))}
-    </WrapperContainer>
+      {cards.map((card) => {
+        console.log(card);
+        return (
+          <MakeCard
+            logo={card.logo}
+            company={card.company}
+            neww={card.neww}
+            position={card.position}
+            featured={card.featured}
+            postedAt={card.postedAt}
+            contract={card.contract}
+            location={card.location}
+            role={card.role}
+            level={card.level}
+            languages={card.languages}
+            tools={card.tools}
+          />
+        );
+      })}
+    </>
   );
 };
 

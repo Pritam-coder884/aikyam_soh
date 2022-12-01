@@ -12,11 +12,10 @@ import StoriesPage from "./pages/Stories/Stories";
 import ReunionPage from "./pages/Reunion/ReunionPage";
 import GalleryPage from "./pages/gallery/Gallery";
 import Job from "./pages/job/Job";
-// const socket = socketIO.connect("http://localhost:9000");
-// import Alumni from "./pages/Alumni/Alumni";
+import Alumni from "./pages/Alumni/Alumni";
 import CardStu from "./components/Card/card/CardStu";
 import CardAlum from "./components/Card/card/CardAlum";
-import Alumni from "./pages/Alumni/Alumni";
+// const socket = socketIO.connect("http://localhost:9000");
 
 const App = () => {
   const navigate = useNavigate();
@@ -35,15 +34,13 @@ const App = () => {
         <Route path="/register" element={<Signup />}></Route>
         <Route path="/authsignup" element={<AuthSignup />}></Route>
         <Route path="/" element={<Home />}></Route>
-        {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
-        <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
         <Route path="/stories" element={<StoriesPage />}></Route>
         <Route path="/reunion" element={<ReunionPage />}></Route>
         <Route path="/gallery" element={<GalleryPage />}></Route>
         <Route path="/jobs" element={<Job />}></Route>
         <Route path="/job" element={<Job />}></Route>
         <Route path="/search" element={<Alumni />}></Route>
-        {/* <Route path="/alumni" element={<Alumni />}></Route> */}
+        <Route path="/alumni" element={<Alumni />}></Route>
         {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
       </Routes>
