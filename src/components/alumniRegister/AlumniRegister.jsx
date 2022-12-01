@@ -7,17 +7,17 @@ const AlumniRegister = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [userRegister, setUserRegister] = useState({
-    name:"",
-    email:"",
-    mobile:"",
-    gender:"",
-    interest:"",
-    institution:"",
-    pyear:"",
-    branch:"",
-    job:"",
-    location:"",
-    pic:"",
+    name: "",
+    email: "",
+    mobile: "",
+    gender: "",
+    interest: "",
+    institution: "",
+    pyear: "",
+    branch: "",
+    job: "",
+    location: "",
+    pic: "",
   });
 
   const postImg = async (pic) => {
@@ -39,12 +39,12 @@ const AlumniRegister = () => {
       setUserRegister({ ...userRegister, pic: picUrl });
     } catch (err) {
       if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
     }
   };
 
@@ -52,20 +52,19 @@ const AlumniRegister = () => {
     e.preventDefault();
     // console.log(userRegister);
     try {
-			const url = "http://localhost:7070/alumni";
-			const { userRegister: res } = await axios.post(url, userRegister);
-			navigate("/login");
-			console.log(res.message);
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
-		}
-   
+      const url = "http://localhost:7070/alumni";
+      const { userRegister: res } = await axios.post(url, userRegister);
+      navigate("/login");
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
   };
 
   const handleRegisterChange = (e) => {
