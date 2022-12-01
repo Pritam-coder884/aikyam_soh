@@ -11,9 +11,16 @@ import "./Card.css";
 
 const CardStu = () => {
   return (
-    <Box p={10} sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
+    <Box
+      p={10}
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        margin: "auto",
+      }}
+    >
       <Grid conatiner xs={10} display="ms-grid">
-        <Card sx={{ maxWidth: 345 }} className="container">
+        <Card sx={{ maxWidth: 345, margin: "0 auto" }} className="container">
           <CardMedia
             component="img"
             height="140"
@@ -22,37 +29,65 @@ const CardStu = () => {
             className="img"
           />
           <Box className="overlay">
-            <CardContent className="text">
+            <CardContent className="text" sx={{ width: "80%" }}>
               <Typography gutterBottom variant="h5" component="div">
                 Name
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 Male
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 email@gmail.com
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 (+919876543210)
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 XYZ,BBSR
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 BTech
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 Branch:-Cse
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 RegdNo:-9876543210
               </Typography>
             </CardContent>
           </Box>
         </Card>
       </Grid>
-      <Grid conatiner xs={10} display="ms-grid">
-        <Card sx={{ maxWidth: 345 }} className="container">
+      {/* <Grid conatiner xs={10} display="ms-grid">
+        <Card sx={{ maxWidth: 345, margin: "0 auto" }} className="container">
           <CardMedia
             component="img"
             height="140"
@@ -65,25 +100,60 @@ const CardStu = () => {
               <Typography gutterBottom variant="h5" component="div">
                 Name
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 Male
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 email@gmail.com
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 (+919876543210)
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 XYZ,BBSR
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 BTech
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 Branch:-Cse
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className="text1"
+                sx={{ color: "white" }}
+              >
                 RegdNo:-9876543210
               </Typography>
             </CardContent>
@@ -92,7 +162,7 @@ const CardStu = () => {
       </Grid>
 
       <Grid conatiner xs={10} display="ms-grid">
-        <Card sx={{ maxWidth: 345 }} className="container">
+        <Card sx={{ maxWidth: 345, margin: "0 auto" }} className="container">
           <CardMedia
             component="img"
             height="140"
@@ -105,31 +175,59 @@ const CardStu = () => {
               <Typography gutterBottom variant="h5" component="div">
                 Name
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 Male
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 email@gmail.com
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 (+919876543210)
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 XYZ,BBSR
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 BTech
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 Branch:-Cse
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ color: "white" }}
+              >
                 RegdNo:-9876543210
               </Typography>
             </CardContent>
           </Box>
         </Card>
-      </Grid>
+      </Grid> */}
     </Box>
   );
 };

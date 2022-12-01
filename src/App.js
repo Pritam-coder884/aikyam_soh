@@ -9,6 +9,10 @@ import AuthSignup from "./pages/signupAuth/Register";
 import { useNavigate, Routes, Route } from "react-router-dom";
 import Event from "./pages/events/Event";
 import Job from "./pages/job/Job";
+// import Alumni from "./pages/Alumni/Alumni";
+import CardStu from "./components/Card/card/CardStu";
+import CardAlum from "./components/Card/card/CardAlum";
+import Alumni from "./pages/Alumni/Alumni";
 // const socket = socketIO.connect('http://localhost:9000');
 
 const App = () => {
@@ -29,6 +33,8 @@ const App = () => {
         <Route path="/authsignup" element={<AuthSignup />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/job" element={<Job />}></Route>
+        <Route path="/search" element={<Alumni />}></Route>
+        {/* <Route path="/alumni" element={<Alumni />}></Route> */}
         {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
       </Routes>

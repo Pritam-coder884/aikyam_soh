@@ -1,5 +1,6 @@
 .container {
     position: relative;
+    box-shadow: 0 0 15px 0px #666 !important;
 }
 
 .img {
@@ -18,7 +19,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    background-color: #003f548b;
 }
 
 .container:hover .overlay {
@@ -27,12 +28,13 @@
 
 .text {
     color: white;
-    font-size: 20px;
+    font-size: 23px;
+    line-height: 17px;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
+    /* text-align: center; */
 }
