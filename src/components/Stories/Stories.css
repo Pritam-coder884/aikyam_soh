@@ -1,21 +1,23 @@
-/* h1{
+h1{
     font-size: 29px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 p{
     font-size: 21px;
-} */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .Select{
     margin: 10px;
     height: 50px;
 }
-.stories-header{
-    padding-left: 200px;
-}
-
 .Stories-upper-nav{
     display: flex;
     justify-content: space-between;
-    margin-right: 200px;
+    /* width: 800px; */
+    /* padding-left: 200px;
+    padding-right: 200px; */
+    padding: 0px 200px;
 }
 
 .Stories{
@@ -40,6 +42,7 @@ p{
 .Stories-container-left img{
     height: 200px;
     width: 260px;
+    justify-content: center;
 }
 
 .Stories-container-right{
@@ -70,39 +73,45 @@ p{
         font-size: 15px;
     }
     .Stories{
-        padding-left: 0;
         width: fit-content;
     }
     .Stories-container-left{
         margin-left: 0;
+        padding-left: 0
     }
-    /* .Stories-upper-nav{
-        margin: 2px;
-        padding: 2px;
-    }
-    .Stories-upper-nav .Select{
-        margin-right: 40px;
-    } */
-    .Stories-container-left img{
-        margin-left: 90px;
+    .Stories-upper-nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 @media only screen and (max-width: 400px){
-    .stories-header{
+    /* .stories-header{
         padding-left: 70px;
     }
     .Stories-upper-nav .Select{
-        /* justify-content: space-between; */
         padding-left: 10px;
     }
     .Stories{
         margin: auto;
     }
-    .Stories-container{
-        margin-left: 3rem;
-    }
+ 
     .Stories-container-left img{
         margin-left: 12px;
+    } */
+    .Stories-container{
+        margin-left:-150px;
+    }
+    .Stories{
+        padding-right:5px;
+        /* margin-right: 5px; */
+    }
+    .Stories-bg{
+        padding-right: 0px;
+        /* width: fit-content; */
+    }
+    .Stories-upper-nav{
+        padding: 0px 100px;
     }
 }

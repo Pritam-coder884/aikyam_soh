@@ -7,13 +7,16 @@ import { useEffect } from "react";
 import CardAlum from "../../components/Card/card/CardAlum";
 import { Box } from "@mui/material";
 import axios from "axios";
+import WrapperContainer from "../../common/WrapperContainer";
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Alumni = () => {
   const [search, setSearch] = useState("");
   const [alm, setAlm] = useState();
 
   const handleClick = async () => {
     try {
-      const url = `http://localhost:7070/alumni/s?search=${search}`;
+      const url = `${API_URL}/alumni/s?search=${search}`;
       const res = await axios.get(url);
       console.log(res.data);
       setAlm(res.data);
@@ -30,7 +33,7 @@ const Alumni = () => {
   };
 
   return (
-    <>
+    <WrapperContainer>
       <div className="alumni-search-bar">
         <input
           type="text"
@@ -80,7 +83,7 @@ const Alumni = () => {
             );
           })}
       </Box>
-    </>
+    </WrapperContainer>
   );
 };
 

@@ -5,7 +5,7 @@ import MediaControlCard from "../../components/Job/MakeCard";
 import MakeCard from "../../components/Job/MakeCard";
 import cardData from "../../config/data";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
-import { Button } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -14,6 +14,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
 import { useEffect } from "react";
+import WrapperContainer from "../../common/WrapperContainer";
 
 const Job = () => {
   const addEvent = () => {};
@@ -63,22 +64,17 @@ const Job = () => {
 
     return (
       <div>
-        <Button
-          variant="contained"
-          sx={{
-            position: "absolute",
-            right: "20px",
-            top: "20px",
-            backgroundColor: "#ddd",
-            "&:hover": {
-              backgroundColor: "#999",
-              color: "#cde",
-            },
-          }}
-          onClick={handleClickOpen}
-        >
-          <ControlPointIcon />
-        </Button>
+        <Grid container alignItems="center" justifyContent="flex-end">
+          <Typography px={2} sx={{ fontWeight: "500" }}>
+            Add Jobs :-
+          </Typography>
+          <Grid item pr={5}>
+            <Button variant="contained" onClick={handleClickOpen}>
+              <ControlPointIcon />
+            </Button>
+          </Grid>
+        </Grid>
+
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Subscribe</DialogTitle>
           <DialogContent>
@@ -155,7 +151,19 @@ const Job = () => {
   }
 
   return (
-    <>
+    <WrapperContainer>
+      <Typography
+        textAlign="center"
+        pt={2}
+        sx={{ fontWeight: 500, color: "orange" }}
+        variant="h4"
+      >
+        Jobs Section
+      </Typography>
+      <Typography textAlign="center" sx={{ fontWeight: 400 }} variant="h5">
+        Here you can get to know about latest job opennings.
+      </Typography>
+
       <AddEvent />
       {cards.map((card) => {
         console.log(card);
@@ -176,7 +184,7 @@ const Job = () => {
           />
         );
       })}
-    </>
+    </WrapperContainer>
   );
 };
 

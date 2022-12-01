@@ -40,7 +40,6 @@ const App = () => {
         <Route path="/reunion" element={<ReunionPage />}></Route>
         <Route path="/gallery" element={<GalleryPage />}></Route>
         <Route path="/jobs" element={<Job />}></Route>
-        <Route path="/job" element={<Job />}></Route>
         <Route path="/search" element={<Alumni />}></Route>
         <Route path="/alumni" element={<Alumni />}></Route>
         {/* <Route path="/homechat" element={<HomeChat socket={socket} />}></Route>

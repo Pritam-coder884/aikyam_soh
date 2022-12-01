@@ -2,7 +2,7 @@ import React from "react";
 import FooterButton from "./FooterButton/FooterButton";
 import "./Footer.css";
 import { Adb, Facebook, Instagram, LinkedIn } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo2.png";
 
@@ -13,21 +13,27 @@ const Footer = () => {
       <div className="footer-container">
         <div className="Footer">
           <div className="footer-box" style={{ width: "30vw" }}>
-            <div>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <IconButton
-                sx={{ padding: 0, display: { xs: "none", md: "flex" }, mr: 1 }}
+                sx={{
+                  padding: 0,
+                  display: { md: "flex" },
+                  mr: 1,
+                  backgroundColor: "orange",
+                }}
               >
                 <img src={logo} alt="" width="50px" />
               </IconButton>
+              <Typography sx={{ fontWeight: "600px" }}>AIKYAM</Typography>
             </div>
-            <div>AIKYAM, CONNECTING ALUMS AND STUDENTS.</div>
+            <div>CONNECTING ALUMS AND STUDENTS.</div>
           </div>
           <div className="footer-box">
             <h1>UNIVERSITY</h1>
             <FooterButton title={"STUDENTS"} navigate="/" />
             <FooterButton title={"EVENTS"} navigate="/events" />
             <FooterButton title={"GALLERY"} navigate="/gallery" />
-            <FooterButton title={"NEWS"} navigate="/news" />
+            <FooterButton title={"NEWS"} navigate="/" />
           </div>
           <div className="footer-box">
             <h1>ALUMNI</h1>
@@ -38,7 +44,7 @@ const Footer = () => {
           </div>
           <div className="footer-box">
             <h1>ACCOUNT</h1>
-            <FooterButton title={"PROFILE"} navigate="/profile" />
+            <FooterButton title={"PROFILE"} navigate="/" />
             <FooterButton title={"STORIES"} navigate="/stories" />
             <FooterButton title={"DOWNLOADS"} />
           </div>

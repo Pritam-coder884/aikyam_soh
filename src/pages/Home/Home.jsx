@@ -48,7 +48,7 @@ const Home = () => {
             showBullets={true}
             showNavs={true}
           /> */}
-          <Grid container direction="row" height="100%">
+          <Grid container direction="row" height="100%" alignItems="center">
             <Grid item xs={12} p={4} sm={12} md={12} lg={4} xl={6}>
               <Grid
                 container
@@ -64,7 +64,7 @@ const Home = () => {
                       fontWeight: 600,
                       fontFamily: "Quicksand, sans-serif",
                     }}
-                    textAlign="left"
+                    textAlign="center"
                   >
                     AIKYAM
                   </Typography>
@@ -103,6 +103,7 @@ const Home = () => {
               item
               xs={12}
               p={4}
+              pt={0}
               sm={12}
               md={12}
               lg={8}

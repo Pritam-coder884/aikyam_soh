@@ -15,15 +15,35 @@
 
 .events-box{
     padding:0.5rem 4rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 1rem;
 }
+
+
 .events-category{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:2rem 4rem 0rem 4rem;
 }
-.add-events{
-    padding:10px
+.add-events button{
+    padding:20px;
+    background: orange;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:900px) {
+    .events-heading h1{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .events-box{
+        grid-template-columns: 1fr;
+    }
 }

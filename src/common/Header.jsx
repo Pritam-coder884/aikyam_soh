@@ -136,6 +136,24 @@ const DrawerWrapper = () => {
                 <Typography textAlign="center">Stories</Typography>
               </MenuItem>
               <MenuItem
+                key="alumni"
+                onClick={() => {
+                  history("/alumni");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Alumni</Typography>
+              </MenuItem>
+              <MenuItem
+                key="gallery"
+                onClick={() => {
+                  history("/gallery");
+                  handleCloseNavMenu();
+                }}
+              >
+                <Typography textAlign="center">Gallery</Typography>
+              </MenuItem>
+              <MenuItem
                 key="reunion"
                 onClick={() => {
                   history("/reunion");
@@ -199,6 +217,26 @@ const DrawerWrapper = () => {
               sx={{ my: 2, color: "white", display: "block" }}
             >
               Events
+            </Button>
+            <Button
+              key="alumni"
+              onClick={() => {
+                history("/alumni");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Alumni
+            </Button>
+            <Button
+              key="Gallery"
+              onClick={() => {
+                history("/Gallery");
+                handleCloseNavMenu();
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Gallery
             </Button>
             <Button
               key="reunion"

@@ -7,8 +7,10 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Jobs = () => {
+  const history = useNavigate();
   return (
     <Grid container p={3} pb={9} direction="column">
       <Grid item pb={1}>
@@ -28,7 +30,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
@@ -45,7 +51,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
@@ -62,7 +72,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
@@ -79,7 +93,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
@@ -96,7 +114,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
@@ -113,7 +135,11 @@ const Jobs = () => {
               </Typography>
             </CardContent>
             <Grid item p={2} textAlign="right" direction="row">
-              <Button size="small" sx={{ color: "orange" }}>
+              <Button
+                size="small"
+                sx={{ color: "orange" }}
+                onClick={() => history("/jobs")}
+              >
                 Learn More
               </Button>
             </Grid>
