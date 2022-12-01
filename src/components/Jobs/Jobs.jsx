@@ -16,7 +16,7 @@ const Jobs = () => {
           Job Openings
         </Typography>
       </Grid>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={3} justifyContent="center">
         <Grid item>
           <Card sx={{ maxWidth: 345 }}>
             <CardContent>
